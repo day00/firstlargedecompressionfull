@@ -1,0 +1,55 @@
+{
+  "general": {
+    "easy": [
+      {
+        "question": "Which country has won the most medals at WCA Championships?",
+        "answer": "United States",
+        "options": ["United States", "China", "Poland", "Australia"]
+      },
+      {
+        "question": "What does WCA stand for?",
+        "answer": "World Cube Association",
+        "options": ["World Cube Association", "World Championship Arena", "World Cubing Academy", "World Competition Alliance"]
+      },
+      {
+        "question": "How many events are in WCA Championships 2025?",
+        "answer": "17",
+        "options": ["17", "15", "13", "19"]
+      }
+    ],
+    "medium": [
+      {
+        "question": "What year was the first official WCA competition?",
+        "answer": "2003",
+        "options": ["2003", "2001", "2005", "2007"]
+      },
+      {
+        "question": "Which method has 78 algorithms?",
+        "answer": "CFOP",
+        "options": ["CFOP", "Roux", "ZZ", "Petrus"]
+      },
+      {
+        "question": "What's the WCA ID format?",
+        "answer": "YYYY[NAME]##",
+        "options": ["YYYY[NAME]##", "NAME-YYYY-##", "##NAMEYYYY", "YYYY##NAME"]
+      }
+    ],
+    "hard": [
+      {
+        "question": "Who won the first WCA World Championship?",
+        "answer": "Dan Knights",
+        "options": ["Dan Knights", "Jessica Fridrich", "Tyson Mao", "Lars Petrus"]
+      },
+      {
+        "question": "What's the minimum age for WCA competitions?",
+        "answer": "No minimum",
+        "options": ["No minimum", "5 years", "8 years", "10 years"]
+      },
+      {
+        "question": "How many scrambles in a 3x3 average?",
+        "answer": "5",
+        "options": ["5", "3", "7", "4"]
+      }
+    ]
+  }
+}

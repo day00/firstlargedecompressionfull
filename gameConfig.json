@@ -1,0 +1,83 @@
+{
+  "events": ["333", "222", "444", "555", "666", "777", "333bf", "333oh", "clock", "minx", "pyram", "skewb", "sq1", "444bf", "555bf", "333mbf", "333fm"],
+  "eventNames": {
+    "333": "3x3x3 Cube",
+    "222": "2x2x2 Cube",
+    "444": "4x4x4 Cube",
+    "555": "5x5x5 Cube",
+    "666": "6x6x6 Cube",
+    "777": "7x7x7 Cube",
+    "333bf": "3x3x3 Blindfolded",
+    "333oh": "3x3x3 One-Handed",
+    "clock": "Clock",
+    "minx": "Megaminx",
+    "pyram": "Pyraminx",
+    "skewb": "Skewb",
+    "sq1": "Square-1",
+    "444bf": "4x4x4 Blindfolded",
+    "555bf": "5x5x5 Blindfolded",
+    "333mbf": "3x3x3 Multi-Blind",
+    "333fm": "3x3x3 Fewest Moves"
+  },
+  "finals": {
+    "333": {
+      "time": "2025-01-26T14:00:00",
+      "status": "pending",
+      "venue": "Main Stage"
+    },
+    "222": {
+      "time": "2025-01-26T10:00:00",
+      "status": "pending",
+      "venue": "Main Stage"
+    },
+    "444": {
+      "time": "2025-01-26T16:00:00",
+      "status": "pending",
+      "venue": "Main Stage"
+    },
+    "555": {
+      "time": "2025-01-27T10:00:00",
+      "status": "pending",
+      "venue": "Main Stage"
+    },
+    "333oh": {
+      "time": "2025-01-27T14:00:00",
+      "status": "pending",
+      "venue": "Main Stage"
+    },
+    "pyram": {
+      "time": "2025-01-27T16:00:00",
+      "status": "pending",
+      "venue": "Side Stage"
+    }
+  },
+  "eventTimings": {
+    "default": {
+      "snacks": 45,
+      "seats": 25,
+      "doors": 60
+    },
+    "333": {
+      "snacks": 60,
+      "seats": 120,
+      "doors": 150
+    },
+    "222": {
+      "snacks": 30,
+      "seats": 20,
+      "doors": 45
+    }
+  },
+  "actualResults": {
+    "333": {
+      "1": "2016JONE01",
+      "2": "2015SCHU02",
+      "3": "2012PARK03"
+    },
+    "222": {
+      "1": "2018WANG01",
+      "2": "2015SCHU02",
+      "3": "2019CHEN05"
+    }
+  }
+}
