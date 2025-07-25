@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCA 2025 Birthday Guide 🎁</title>
+    <style>
+        /* Mobile-first gradient theme - Creates joy through design */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Screen management - Simple but complete */
+        .screen {
+            display: none;
+            padding: 20px;
+            max-width: 480px;
+            margin: 0 auto;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards - Modern and playful */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Buttons - Tactile feedback */
+        .btn {
+            background: #5a67d8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #4c51bf;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(90, 103, 216, 0.3);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Countdown - The emotional heartbeat */
+        .countdown {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+        }
+
+        .countdown div:first-child {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Competitor cards */
+        .competitor-card {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background 0.2s ease;
+        }
+
+        .competitor-card:hover {
+            background: #f7fafc;
+        }
+
+        .competitor-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+            background: #e2e8f0;
+        }
+
+        /* Navigation tabs */
+        .tabs {
+            display: flex;
+            overflow-x: auto;
+            margin: 20px 0;
+            padding-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background: #e2e8f0;
+            margin-right: 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .tab:hover {
+            background: #cbd5e0;
+        }
+
+        .tab.active {
+            background: #5a67d8;
+            color: white;
+        }
+
+        /* Prediction slots */
+        .prediction-slot {
+            border: 2px dashed #cbd5e0;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            min-height: 80px;
+            transition: all 0.2s ease;
+        }
+
+        .prediction-slot.filled {
+            border-style: solid;
+            border-color: #5a67d8;
+            background: #ebf4ff;
+        }
+
+        /* Fixed home button */
+        .home-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: #e53e3e;
+            z-index: 100;
+            padding: 10px 15px;
+            box-shadow: 0 2px 8px rgba(229, 62, 62, 0.3);
+        }
+
+        .home-btn:hover {
+            background: #c53030;
+        }
+
+        /* Back button styling */
+        .back-btn {
+            background: #718096;
+            margin-bottom: 10px;
+        }
+
+        .back-btn:hover {
+            background: #4a5568;
+        }
+
+        /* Responsive design */
+        @media (min-width: 768px) {
+            .screen {
+                max-width: 768px;
+            }
+            
+            .tabs {
+                justify-content: center;
+            }
+            
+            .card {
+                padding: 30px;
+            }
+        }
+
+        /* Utility classes */
+        .text-center { text-align: center; }
+        .mt-20 { margin-top: 20px; }
+        .mb-20 { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <!-- Fixed home button - Always accessible -->
+    <button class="btn home-btn" onclick="W.nav('home')">🏠</button>
+    
+    <!-- Main app container -->
+    <div id="app">
+        <!-- Home Screen -->
+        <div id="homeScreen" class="screen active">
+            <div class="countdown" id="countdown">
+                <div>Loading next event...</div>
+                <div>Getting ready for an amazing championship!</div>
+            </div>
+            <div class="card">
+                <h1 class="text-center">WCA Championships 2025 🏆</h1>
+                <p class="text-center">Your personal guide to the biggest cubing event!</p>
+                <div class="text-center mt-20">
+                    <button class="btn" onclick="W.nav('browse')">👥 Browse Competitors</button>
+                    <button class="btn" onclick="W.nav('predictions')">🎯 My Predictions</button>
+                    <button class="btn" onclick="W.nav('games')">🎮 Play Games</button>
+                    <button class="btn" onclick="W.nav('schedule')">📅 Schedule</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Browse Screen -->
+        <div id="browseScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>Browse Competitors</h2>
+                <div class="tabs">
+                    <div class="tab" onclick="W.m.browse.setMode('world', this)">🌍 World Class</div>
+                    <div class="tab" onclick="W.m.browse.setMode('finalists', this)">🏆 Finalists</div>
+                    <div class="tab active" onclick="W.m.browse.setMode('all', this)">👥 Everyone</div>
+                </div>
+                <div id="browseContent">
+                    <!-- Competitor cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Browser Screen -->
+        <div id="eventBrowserScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>Select Event</h2>
+                <div id="eventList">
+                    <!-- Event buttons will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Competitor Detail Screen -->
+        <div id="competitorDetailScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card" id="competitorDetail">
+                <!-- Competitor details will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Predictions Screen -->
+        <div id="predictionsScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>My Predictions 🎯</h2>
+                <p>Pick who you think will win each event!</p>
+                <div id="predictionEvents">
+                    <!-- Event prediction buttons will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Make Predictions Screen -->
+        <div id="makePredictionsScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2 id="predictionEventTitle">Make Your Predictions</h2>
+                <div id="predictionSlots">
+                    <!-- 5 prediction slots will be inserted here -->
+                </div>
+                <button class="btn" onclick="W.m.predictions.save()">Save Predictions 💾</button>
+            </div>
+        </div>
+
+        <!-- Competitor Select Screen -->
+        <div id="competitorSelectScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>Select Competitor</h2>
+                <div id="competitorSelectList">
+                    <!-- Selectable competitors will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>Championship Results 🏆</h2>
+                <div id="resultsContent">
+                    <!-- Results will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Games Screen -->
+        <div id="gamesScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>WCA Games 🎮</h2>
+                <p>Test your cubing knowledge!</p>
+                <div class="text-center mt-20">
+                    <button class="btn" onclick="W.nav('gameDifficulty'); W.s.gameType='trivia'">🤔 Trivia Challenge</button>
+                    <button class="btn" onclick="W.nav('gameDifficulty'); W.s.gameType='speed'">🏃 Speed Match</button>
+                    <button class="btn" onclick="W.nav('gameDifficulty'); W.s.gameType='country'">🌍 Country Guesser</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Difficulty Screen -->
+        <div id="gameDifficultyScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>Select Difficulty</h2>
+                <div class="text-center mt-20">
+                    <button class="btn" onclick="W.m.games.start('easy')">😊 Easy</button>
+                    <button class="btn" onclick="W.m.games.start('medium')">🤔 Medium</button>
+                    <button class="btn" onclick="W.m.games.start('hard')">😤 Hard</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Play Screen -->
+        <div id="gamePlayScreen" class="screen">
+            <button class="btn back-btn" onclick="W.m.games.quit()">← Quit</button>
+            <div class="card">
+                <h2 id="gameTitle">Game Question</h2>
+                <div id="gameContent">
+                    <!-- Game content will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Scores Screen -->
+        <div id="scoresScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>Your Progress 📊</h2>
+                <div id="scoresContent">
+                    <!-- Scores will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Save Screen -->
+        <div id="saveScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>Save Your Progress 💾</h2>
+                <div id="saveContent" class="text-center">
+                    <!-- QR code and save code will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional screens follow same pattern -->
+        <div id="scheduleScreen" class="screen">
+            <button class="btn back-btn" onclick="W.goBack()">← Back</button>
+            <div class="card">
+                <h2>Event Schedule 📅</h2>
+                <div id="scheduleContent">
+                    <!-- Schedule will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    // WCA Birthday Gift - 80hrs of love compressed with care
+    // Global app object
+    const W = window.WCAGuideApp = {
+        // Data layer with embedded samples
+        d: {
+            // Competitor data - will be replaced by JSON if available
+            competitors: {
+                "2012PARK03": {
+                    name: "Max Park",
+                    country: "United States",
+                    photoUrl: "https://avatars.worldcubeassociation.org/uploads/user/avatar/2012PARK03/1631071192.jpg",
+                    gender: "m",
+                    medals: { gold: 1350, silver: 78, bronze: 19, total: 1447 },
+                    worldRankings: {
+                        "333": { single: 3, average: 6 },
+                        "444": { single: 1, average: 2 },
+                        "555": { single: 2, average: 1 }
+                    },
+                    isFinalist: {
+                        "333": true,
+                        "444": true, 
+                        "555": true,
+                        "666": true,
+                        "777": true,
+                        "333oh": true
+                    },
+                    funFacts: [
+                        "Former 3x3 world record holder",
+                        "Featured in Netflix documentary"
+                    ]
+                },
+                "2010ZEMD01": {
+                    name: "Feliks Zemdegs",
+                    country: "Australia", 
+                    photoUrl: "https://example.com/feliks.jpg",
+                    gender: "m",
+                    medals: { gold: 800, silver: 200, bronze: 50, total: 1050 },
+                    worldRankings: {
+                        "333": { single: 10, average: 15 },
+                        "444": { single: 5, average: 8 }
+                    },
+                    isFinalist: {
+                        "333": true,
+                        "444": true
+                    },
+                    funFacts: [
+                        "Most world records in history",
+                        "First sub-5 3x3 average"
+                    ]
+                },
+                "2015SCHU02": {
+                    name: "Luke Garrett", 
+                    country: "United States",
+                    photoUrl: "",
+                    gender: "m",
+                    medals: { gold: 50, silver: 30, bronze: 20, total: 100 },
+                    worldRankings: {
+                        "333": { single: 50, average: 75 }
+                    },
+                    isFinalist: {},
+                    funFacts: ["Rising star in 2025"]
+                }
+            },
+
+            // Facts for games
+            facts: {
+                easy: [
+                    { question: "Which country has won the most medals?", answer: "United States", options: ["United States", "China", "Poland", "Australia"] },
+                    { question: "What does WCA stand for?", answer: "World Cube Association", options: ["World Cube Association", "World Championship Arena", "World Cubing Academy", "World Competition Alliance"] }
+                ],
+                medium: [
+                    { question: "What year was the first WCA competition?", answer: "2003", options: ["2003", "2001", "2005", "2007"] }
+                ],
+                hard: [
+                    { question: "Who won the first WCA World Championship?", answer: "Dan Knights", options: ["Dan Knights", "Jessica Fridrich", "Tyson Mao", "Lars Petrus"] }
+                ]
+            },
+
+            // Game configuration
+            config: {
+                events: ["333", "222", "444", "555", "666", "777", "333bf", "333oh", "clock", "minx", "pyram", "skewb", "sq1"],
+                eventNames: {
+                    "333": "3x3x3 Cube",
+                    "222": "2x2x2 Cube", 
+                    "444": "4x4x4 Cube",
+                    "555": "5x5x5 Cube",
+                    "666": "6x6x6 Cube",
+                    "777": "7x7x7 Cube",
+                    "333bf": "3x3x3 Blindfolded",
+                    "333oh": "3x3x3 One-Handed",
+                    "clock": "Clock",
+                    "minx": "Megaminx",
+                    "pyram": "Pyraminx",
+                    "skewb": "Skewb",
+                    "sq1": "Square-1"
+                },
+                finals: {
+                    "333": { time: "2025-01-26T14:00:00", status: "pending", venue: "Main Stage" },
+                    "222": { time: "2025-01-26T10:00:00", status: "pending", venue: "Main Stage" },
+                    "444": { time: "2025-01-26T16:00:00", status: "pending", venue: "Main Stage" },
+                    "555": { time: "2025-01-27T10:00:00", status: "pending", venue: "Main Stage" }
+                },
+                eventTimings: {
+                    default: { snacks: 45, seats: 25, doors: 60 },
+                    "333": { snacks: 60, seats: 120, doors: 150 }
+                }
+            },
+
+            // User progress - loaded from localStorage
+            progress: {
+                predictions: {},
+                gameScores: {},
+                viewedCompetitors: []
+            }
+        },
+
+        // State management
+        s: {
+            screen: 'home',
+            history: [],
+            countdown: null,
+            browse: { mode: null },
+            currentEvent: null,
+            gameType: null,
+            currentGame: null
+        },
+
+        // Helper functions
+        helpers: {
+            // Default avatar for missing photos
+            defaultAvatar: function() {
+                return 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iI2RkZCIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI0MCI+8J+RpDwvdGV4dD48L3N2Zz4=';
+            },
+
+            // Format time nicely
+            formatTime: function(ms) {
+                const totalSeconds = Math.floor(ms / 1000);
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+                return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+            },
+
+            // Get random item from array
+            randomFrom: function(arr) {
+                return arr[Math.floor(Math.random() * arr.length)];
+            },
+
+            // Shuffle array
+            shuffle: function(arr) {
+                const copy = [...arr];
+                for (let i = copy.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [copy[i], copy[j]] = [copy[j], copy[i]];
+                }
+                return copy;
+            }
+        },
+
+        // Modules object (to be filled in next sections)
+        m: {}
+    };
+
+    // Image error handler
+    W.imgError = function(img) {
+        img.src = W.helpers.defaultAvatar();
+    };
+// Navigation functions
+    W.nav = function(screen) {
+        // Special handling for home
+        if (screen === 'home') {
+            W.s.history = [];
+            W.s.browse.mode = null;
+            W.s.currentEvent = null;
+            W.s.gameType = null;
+        } else if (W.s.screen !== screen) {
+            // Don't push if we're already there
+            W.s.history.push(W.s.screen);
+        }
+
+        // Hide all screens
+        const screens = document.querySelectorAll('.screen');
+        screens.forEach(s => s.classList.remove('active'));
+
+        // Show target screen
+        const targetScreen = document.getElementById(screen + 'Screen');
+        if (targetScreen) {
+            targetScreen.classList.add('active');
+            W.s.screen = screen;
+        }
+    };
+
+    // Go back navigation
+    W.goBack = function() {
+        if (W.s.history.length > 0) {
+            const prev = W.s.history.pop();
+            W.nav(prev);
+        } else {
+            W.nav('home');
+        }
+    };
+
+    // Show competitor details
+    W.showCompetitor = function(id) {
+        const c = W.d.competitors[id];
+        if (!c) return;
+
+        // Track viewed competitor
+        if (!W.d.progress.viewedCompetitors.includes(id)) {
+            W.d.progress.viewedCompetitors.push(id);
+        }
+
+        const detail = document.getElementById('competitorDetail');
+        const medals = c.medals || {};
+        
+        // Build detail HTML
+        let html = '<div style="text-align:center">';
+        html += '<img src="' + (c.photoUrl || '') + '" ';
+        html += 'style="width:120px;height:120px;border-radius:50%;margin-bottom:15px" ';
+        html += 'onerror="W.imgError(this)">';
+        html += '<h2>' + c.name + '</h2>';
+        html += '<p style="font-size:18px;color:#4a5568">' + c.country + '</p>';
+        html += '<div style="font-size:24px;margin:20px 0">';
+        html += '🥇 ' + (medals.gold || 0) + ' ';
+        html += '🥈 ' + (medals.silver || 0) + ' ';
+        html += '🥉 ' + (medals.bronze || 0);
+        html += '</div>';
+
+        // Add fun facts if available
+        if (c.funFacts && c.funFacts.length > 0) {
+            html += '<div style="margin-top:20px;padding:15px;background:#f7fafc;border-radius:10px">';
+            html += '<h3>Fun Facts</h3>';
+            c.funFacts.forEach(fact => {
+                html += '<p>• ' + fact + '</p>';
+            });
+            html += '</div>';
+        }
+
+        // Add finalist status
+        const finalistEvents = Object.keys(c.isFinalist || {}).filter(e => c.isFinalist[e]);
+        if (finalistEvents.length > 0) {
+            html += '<div style="margin-top:20px">';
+            html += '<h3>Finals Qualified</h3>';
+            html += '<div>';
+            finalistEvents.forEach(e => {
+                const eventName = W.d.config.eventNames[e] || e;
+                html += '<span class="btn" style="margin:3px;padding:5px 10px;font-size:14px">' + eventName + '</span>';
+            });
+            html += '</div></div>';
+        }
+
+        html += '</div>';
+        detail.innerHTML = html;
+
+        W.nav('competitorDetail');
+    };
+
+    // Screen management module
+    W.m.screen = {
+        // Initialize all screens with dynamic content
+        init: function() {
+            // Update home screen with better content
+            this.buildHome();
+            
+            // Initialize other screens
+            this.buildSchedule();
+        },
+
+        // Build home screen content
+        buildHome: function() {
+            // Home screen is already in HTML, just ensure countdown works
+            const countdown = document.getElementById('countdown');
+            if (countdown && !countdown.innerHTML.includes('Loading')) {
+                // Already initialized
+                return;
+            }
+        },
+
+        // Build schedule screen
+        buildSchedule: function() {
+            const content = document.getElementById('scheduleContent');
+            if (!content) return;
+
+            let html = '<div style="margin-top:20px">';
+            
+            // Group events by day
+            const eventsByDay = {};
+            Object.entries(W.d.config.finals).forEach(([event, data]) => {
+                const date = new Date(data.time);
+                const day = date.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+                
+                if (!eventsByDay[day]) {
+                    eventsByDay[day] = [];
+                }
+                
+                eventsByDay[day].push({
+                    event: event,
+                    time: date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
+                    venue: data.venue || 'Main Stage'
+                });
+            });
+
+            // Display schedule
+            Object.entries(eventsByDay).forEach(([day, events]) => {
+                html += '<h3>' + day + '</h3>';
+                events.forEach(e => {
+                    const eventName = W.d.config.eventNames[e.event] || e.event;
+                    html += '<div class="card" style="margin:10px 0;padding:15px">';
+                    html += '<strong>' + eventName + '</strong><br>';
+                    html += e.time + ' - ' + e.venue;
+                    html += '</div>';
+                });
+            });
+
+            html += '</div>';
+            content.innerHTML = html;
+        }
+    };
+// Countdown module - The heartbeat of the experience
+    W.m.countdown = {
+        interval: null,
+
+        init: function() {
+            // Start the heartbeat
+            this.interval = setInterval(() => this.update(), 1000);
+            this.update(); // Initial update
+        },
+
+        update: function() {
+            const el = document.getElementById('countdown');
+            if (!el || W.s.screen !== 'home') return;
+
+            const now = new Date();
+            const next = this.getNext(now);
+
+            if (!next) {
+                el.innerHTML = '<div>Championship Complete! 🎉</div>';
+                el.innerHTML += '<div>✈️ Time to fly home! What an amazing experience!</div>';
+                return;
+            }
+
+            const eventName = W.d.config.eventNames[next.event] || next.event;
+            const timeUntil = new Date(next.time) - now;
+            const minutes = Math.floor(timeUntil / 60000);
+
+            let html = '<div>' + eventName + ' Finals</div>';
+            html += '<div>' + this.getMessage(minutes, next.event) + '</div>';
+            
+            el.innerHTML = html;
+        },
+
+        getNext: function(now) {
+            let nextEvent = null;
+            let nextTime = null;
+
+            Object.entries(W.d.config.finals).forEach(([event, data]) => {
+                const eventTime = new Date(data.time);
+                if (eventTime > now && (!nextTime || eventTime < nextTime)) {
+                    nextEvent = event;
+                    nextTime = eventTime;
+                }
+            });
+
+            return nextEvent ? { event: nextEvent, time: nextTime } : null;
+        },
+
+        getMessage: function(minutes, event) {
+            const timings = W.d.config.eventTimings[event] || W.d.config.eventTimings.default;
+
+            // Special Sunday 3x3 message
+            if (event === '333' && new Date().getDay() === 0 && minutes <= 120) {
+                return '🏃 Send Dad to save seats NOW! (2 hours early for 3x3!)';
+            }
+
+            if (minutes <= 0) return '🎯 Starting NOW!';
+            if (minutes <= 5) return '🚀 Let\'s GO! Get there NOW!';
+            if (minutes <= 10) return '🎯 Get ready! Almost time!';
+            if (minutes <= timings.seats) return '🪑 Time to get your seat!';
+            if (minutes <= timings.snacks) return '🍿 Get snacks and find your spot!';
+
+            const hours = Math.floor(minutes / 60);
+            const mins = minutes % 60;
+            return '⏰ ' + hours + 'h ' + mins + 'm until finals!';
+        }
+    };
+
+    // Browse module - Explorer's paradise
+    W.m.browse = {
+        init: function() {
+            // Browse screen already in HTML
+            // Just need the functionality
+        },
+
+        setMode: function(mode, element) {
+            W.s.browse.mode = mode;
+
+            // Update active tab
+            const tabs = document.querySelectorAll('#browseScreen .tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            if (element) element.classList.add('active');
+
+            // Show competitors
+            this.show();
+        },
+
+        show: function() {
+            const content = document.getElementById('browseContent');
+            if (!content) return;
+
+            const mode = W.s.browse.mode || 'all';
+            let competitors = Object.entries(W.d.competitors);
+
+            // Filter based on mode
+            if (mode === 'finalists') {
+                competitors = competitors.filter(([id, c]) => {
+                    return Object.values(c.isFinalist || {}).some(v => v === true);
+                });
+            } else if (mode === 'world') {
+                competitors = competitors.filter(([id, c]) => {
+                    return Object.values(c.worldRankings || {}).some(r => r.single <= 10);
+                });
+            }
+
+            // Build competitor cards
+            let html = '';
+            competitors.forEach(([id, c]) => {
+                html += '<div class="competitor-card" onclick="W.showCompetitor(\'' + id + '\')">';
+                html += '<img src="' + (c.photoUrl || '') + '" onerror="W.imgError(this)">';
+                html += '<div>';
+                html += '<strong>' + c.name + '</strong><br>';
+                html += '<small>' + c.country + ' | 🥇' + (c.medals.gold || 0) + '</small>';
+                html += '</div>';
+                html += '</div>';
+            });
+
+            content.innerHTML = html || '<p>No competitors found in this category.</p>';
+        }
+    };
+
+    // Predictions module - Personal investment
+    W.m.predictions = {
+        init: function() {
+            // Build prediction events list
+            const container = document.getElementById('predictionEvents');
+            if (!container) return;
+
+            let html = '';
+            W.d.config.events.slice(0, 6).forEach(event => {
+                const eventName = W.d.config.eventNames[event] || event;
+                html += '<button class="btn" onclick="W.m.predictions.start(\'' + event + '\')">';
+                html += eventName + ' Predictions';
+                
+                // Show if already made predictions
+                if (W.d.progress.predictions[event]) {
+                    html += ' ✓';
+                }
+                
+                html += '</button>';
+            });
+
+            container.innerHTML = html;
+        },
+
+        start: function(event) {
+            W.s.currentEvent = event;
+            const eventName = W.d.config.eventNames[event] || event;
+            
+            // Update title
+            const title = document.getElementById('predictionEventTitle');
+            if (title) {
+                title.textContent = eventName + ' Predictions';
+            }
+
+            // Build prediction slots
+            const slots = document.getElementById('predictionSlots');
+            if (slots) {
+                let html = '';
+                const medals = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
+                
+                for (let i = 0; i < 5; i++) {
+                    const existing = W.d.progress.predictions[event] && W.d.progress.predictions[event][i];
+                    
+                    html += '<div class="prediction-slot ' + (existing ? 'filled' : '') + '" ';
+                    html += 'onclick="W.m.predictions.select(' + i + ')">';
+                    html += '<div style="font-size:32px">' + medals[i] + '</div>';
+                    
+                    if (existing) {
+                        const competitor = W.d.competitors[existing];
+                        if (competitor) {
+                            html += '<strong>' + competitor.name + '</strong>';
+                        }
+                    } else {
+                        html += '<small>Tap to select</small>';
+                    }
+                    
+                    html += '</div>';
+                }
+                
+                slots.innerHTML = html;
+            }
+
+            W.nav('makePredictions');
+        },
+
+        select: function(slot) {
+            W.s.currentSlot = slot;
+            
+            // Build competitor selection list
+            const list = document.getElementById('competitorSelectList');
+            if (list) {
+                let html = '';
+                
+                Object.entries(W.d.competitors).forEach(([id, c]) => {
+                    // Skip if already selected for this event
+                    const predictions = W.d.progress.predictions[W.s.currentEvent] || [];
+                    if (predictions.includes(id) && predictions.indexOf(id) !== slot) {
+                        return;
+                    }
+                    
+                    html += '<div class="competitor-card" onclick="W.m.predictions.pick(\'' + id + '\')">';
+                    html += '<img src="' + (c.photoUrl || '') + '" onerror="W.imgError(this)">';
+                    html += '<div>';
+                    html += '<strong>' + c.name + '</strong><br>';
+                    html += '<small>' + c.country + '</small>';
+                    html += '</div>';
+                    html += '</div>';
+                });
+                
+                list.innerHTML = html;
+            }
+            
+            W.nav('competitorSelect');
+        },
+
+        pick: function(competitorId) {
+            const event = W.s.currentEvent;
+            const slot = W.s.currentSlot;
+            
+            // Initialize predictions for event if needed
+            if (!W.d.progress.predictions[event]) {
+                W.d.progress.predictions[event] = [];
+            }
+            
+            // Set the prediction
+            W.d.progress.predictions[event][slot] = competitorId;
+            
+            // Go back to predictions screen
+            W.goBack();
+            W.m.predictions.start(event);
+        },
+
+        save: function() {
+            // Save to localStorage
+            localStorage.setItem('wca2025_liam', JSON.stringify(W.d.progress));
+            
+            // Show confirmation
+            alert('Predictions saved! 🎯');
+            
+            // Go back to predictions list
+            W.nav('predictions');
+            W.m.predictions.init();
+        }
+    };
+
+    // Games module - Sustained engagement
+    W.m.games = {
+        questions: [],
+        currentQuestion: 0,
+        score: 0,
+        usedQuestions: new Set(),
+
+        init: function() {
+            // Games menu already in HTML
+        },
+
+        start: function(difficulty) {
+            W.s.currentGame = {
+                type: W.s.gameType,
+                difficulty: difficulty,
+                score: 0,
+                question: 0
+            };
+
+            this.generateQuestions(difficulty);
+            this.showQuestion();
+            W.nav('gamePlay');
+        },
+
+        generateQuestions: function(difficulty) {
+            const facts = W.d.facts[difficulty] || W.d.facts.easy;
+            
+            // Shuffle and pick 10 questions
+            this.questions = W.helpers.shuffle(facts).slice(0, 10);
+            this.currentQuestion = 0;
+            this.score = 0;
+        },
+
+        showQuestion: function() {
+            const game = W.s.currentGame;
+            if (!game || this.currentQuestion >= this.questions.length) {
+                this.showResults();
+                return;
+            }
+
+            const q = this.questions[this.currentQuestion];
+            const title = document.getElementById('gameTitle');
+            const content = document.getElementById('gameContent');
+
+            if (title) {
+                title.textContent = 'Question ' + (this.currentQuestion + 1) + ' of ' + this.questions.length;
+            }
+
+            if (content) {
+                let html = '<div style="margin:20px 0;font-size:18px">' + q.question + '</div>';
+                html += '<div>';
+                
+                const shuffled = W.helpers.shuffle(q.options);
+                shuffled.forEach(option => {
+                    html += '<button class="btn" style="margin:5px;min-width:200px" ';
+                    html += 'onclick="W.m.games.answer(\'' + option.replace(/'/g, "\\'") + '\')">';
+                    html += option;
+                    html += '</button><br>';
+                });
+                
+                html += '</div>';
+                content.innerHTML = html;
+            }
+        },
+
+        answer: function(selected) {
+            const q = this.questions[this.currentQuestion];
+            
+            if (selected === q.answer) {
+                this.score++;
+                alert('Correct! ✅');
+            } else {
+                alert('Wrong! The answer was: ' + q.answer);
+            }
+
+            this.currentQuestion++;
+            this.showQuestion();
+        },
+
+        showResults: function() {
+            const content = document.getElementById('gameContent');
+            if (content) {
+                let html = '<div style="text-align:center;margin:40px 0">';
+                html += '<h2>Game Complete! 🎮</h2>';
+                html += '<p style="font-size:48px;margin:20px">' + this.score + '/' + this.questions.length + '</p>';
+                html += '<button class="btn" onclick="W.nav(\'games\')">Play Again</button>';
+                html += '</div>';
+                
+                content.innerHTML = html;
+            }
+
+            // Update high score
+            const gameKey = W.s.gameType + '_' + W.s.currentGame.difficulty;
+            if (!W.d.progress.gameScores[gameKey] || W.d.progress.gameScores[gameKey] < this.score) {
+                W.d.progress.gameScores[gameKey] = this.score;
+                localStorage.setItem('wca2025_liam', JSON.stringify(W.d.progress));
+            }
+        },
+
+        quit: function() {
+            if (confirm('Quit current game?')) {
+                W.nav('games');
+            }
+        }
+    };
+// Additional helper modules
+    W.m.storage = {
+        save: function() {
+            const saveContent = document.getElementById('saveContent');
+            if (!saveContent) return;
+
+            // Save current progress
+            const data = JSON.stringify(W.d.progress);
+            const encoded = btoa(data);
+            
+            // Generate short code
+            const hash = this.hashCode(encoded);
+            const shortCode = 'WCA' + Math.abs(hash).toString(36).substr(0, 5).toUpperCase();
+           
+           // Store mapping
+           localStorage.setItem('save_' + shortCode, encoded);
+           
+           // Display save info
+           let html = '<div style="margin:20px 0">';
+           html += '<h3>Your Save Code</h3>';
+           html += '<div style="font-size:48px;font-weight:bold;margin:20px;font-family:monospace">';
+           html += shortCode;
+           html += '</div>';
+           html += '<p>Write this down! You can use it to restore your progress.</p>';
+           
+           // Simple QR placeholder
+           html += '<div style="margin:20px;padding:40px;background:#f7fafc;border:2px dashed #cbd5e0">';
+           html += '<p>QR Code (requires QR library)</p>';
+           html += '</div>';
+           
+           html += '<button class="btn" onclick="W.nav(\'home\')">Done</button>';
+           html += '</div>';
+           
+           saveContent.innerHTML = html;
+       },
+       
+       hashCode: function(str) {
+           let hash = 0;
+           for (let i = 0; i < str.length; i++) {
+               const char = str.charCodeAt(i);
+               hash = ((hash << 5) - hash) + char;
+               hash = hash & hash;
+           }
+           return hash;
+       }
+   };
+
+   W.m.scores = {
+       init: function() {
+           const content = document.getElementById('scoresContent');
+           if (!content) return;
+           
+           let html = '<div style="margin:20px 0">';
+           
+           // Show predictions made
+           const predictionCount = Object.keys(W.d.progress.predictions || {}).length;
+           html += '<div class="card" style="margin:10px 0">';
+           html += '<h3>🎯 Predictions</h3>';
+           html += '<p>Events predicted: ' + predictionCount + '</p>';
+           html += '</div>';
+           
+           // Show game scores
+           const gameScores = W.d.progress.gameScores || {};
+           if (Object.keys(gameScores).length > 0) {
+               html += '<div class="card" style="margin:10px 0">';
+               html += '<h3>🎮 Game High Scores</h3>';
+               Object.entries(gameScores).forEach(([key, score]) => {
+                   const parts = key.split('_');
+                   html += '<p>' + parts[0] + ' (' + parts[1] + '): ' + score + '/10</p>';
+               });
+               html += '</div>';
+           }
+           
+           // Show viewed competitors
+           const viewedCount = (W.d.progress.viewedCompetitors || []).length;
+           html += '<div class="card" style="margin:10px 0">';
+           html += '<h3>👥 Competitors Viewed</h3>';
+           html += '<p>' + viewedCount + ' competitors explored</p>';
+           html += '</div>';
+           
+           html += '</div>';
+           content.innerHTML = html;
+       }
+   };
+
+   // Initialize the app
+   W.init = function() {
+       console.log('WCA Birthday Gift initializing...');
+       
+       // Load saved progress
+       try {
+           const saved = localStorage.getItem('wca2025_liam');
+           if (saved) {
+               W.d.progress = JSON.parse(saved);
+               console.log('Progress loaded');
+           }
+       } catch (e) {
+           console.log('No saved progress found');
+       }
+       
+       // Initialize modules
+       W.m.screen.init();
+       W.m.countdown.init();
+       W.m.browse.init();
+       W.m.predictions.init();
+       W.m.games.init();
+       W.m.scores.init();
+       
+       // Load external data with fallbacks
+       if (typeof fetch !== 'undefined') {
+           // Try to load competitors
+           fetch('competitors.json')
+               .then(response => response.json())
+               .then(data => {
+                   W.d.competitors = data;
+                   console.log('Competitors loaded:', Object.keys(data).length);
+                   
+                   // Refresh browse if currently viewing
+                   if (W.s.screen === 'browse') {
+                       W.m.browse.show();
+                   }
+               })
+               .catch(err => {
+                   console.log('Using embedded competitors');
+               });
+           
+           // Try to load facts
+           fetch('facts.json')
+               .then(response => response.json())
+               .then(data => {
+                   W.d.facts = data.general || data;
+                   console.log('Facts loaded');
+               })
+               .catch(err => {
+                   console.log('Using embedded facts');
+               });
+           
+           // Try to load game config
+           fetch('gameConfig.json')
+               .then(response => response.json())
+               .then(data => {
+                   // Merge with existing config
+                   Object.assign(W.d.config, data);
+                   console.log('Game config loaded');
+                   
+                   // Rebuild schedule if viewing
+                   if (W.s.screen === 'schedule') {
+                       W.m.screen.buildSchedule();
+                   }
+               })
+               .catch(err => {
+                   console.log('Using embedded config');
+               });
+       }
+       
+       // Start at home screen
+       W.nav('home');
+       
+       console.log('WCA Birthday Gift ready! 🎁');
+   };
+
+   // Auto-save progress periodically
+   setInterval(function() {
+       if (W.d.progress) {
+           localStorage.setItem('wca2025_liam', JSON.stringify(W.d.progress));
+       }
+   }, 30000); // Every 30 seconds
+
+   // Start the experience when DOM is ready
+   if (document.readyState === 'loading') {
+       document.addEventListener('DOMContentLoaded', W.init);
+   } else {
+       W.init();
+   }
+   </script>
+</body>
+</html>
